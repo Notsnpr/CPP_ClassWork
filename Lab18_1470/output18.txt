@@ -1,0 +1,13 @@
+    Student        Actual      Curved         Graph
+    Name           Grade       Grade
+-----------------   --------    --------    -----------
+            Smith          92          97    |**********
+            Lopez          65          68    |*******
+           Garcia          68          72    |*******
+          Trenton          75          79    |********
+             Pitt          90          95    |**********
+            Garza          95         100    |**********
+             Tsai          84          88    |*********
+             Chei          70          74    |*******
+           Piazza          63          66    |*******
+            Holtz          58          61    |******
