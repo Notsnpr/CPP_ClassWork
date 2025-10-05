@@ -1,0 +1,16 @@
+1. Given a sorted array of n comparable items A, and a search value key, return the position (array index) of key in
+A if it is present, or -1 if it is not present. If key is present in A, your algorithm must run in order O(log k) time,
+where k is the location of key in A. Otherwise, if key is not present, your algorithm must run in O(log n) time.
+Turn in:
+
+    a. A written description of your algorithm, along with an explanation for why it works, and an analysis of
+    your run time.
+    b. A C++ implementation of your solution. Use: ‘int fastFind(vector<double> &A, double key);’ as your
+    function prototype.
+
+Reasonsing:
+    -We are going to be using binary search to be able find the value key this will allow us to find the given variable in O(log K) time
+    and if the variable is not found yet it will done in O(log n) time
+
+Run Time:
+    -O(log n) run time

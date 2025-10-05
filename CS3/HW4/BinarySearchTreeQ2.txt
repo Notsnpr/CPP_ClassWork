@@ -1,0 +1,13 @@
+2. Given a sorted array of n comparable items A, create a binary search tree from the items in A which has height h
+<= log2 n. Your algorithm must create the tree in O(n) time.
+Turn in:
+    a. A written description of your algorithm, along with an explanation for why it works, and an analysis of
+    your run time.
+    b. A C++ implementation of your solution. Use: ‘node* buildTree(vector<double> &A, int start, int
+    end);’ as your function prototype, which will create a tree from the items in A from indices start to end
+    (inclusive), and return a pointer to the root node of the resultant tree. 
+
+Reasonsing:
+    -We are to first make the root node then we are going to use recursion to be able to make the left node and then the right node that way we can scale it as much as we need to regardless of the size of the vector
+Run time:
+    -O(n) run time

@@ -1,1 +1,0 @@
-centdollarsp)/100

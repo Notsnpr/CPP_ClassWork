@@ -1,0 +1,25 @@
+3. Traversing the tree level by level: For the following question, assume binary trees consist of nodes from the
+following class:
+        class node{
+        public:
+        int data;
+        node * left;
+        node * right;
+        };
+Write a method ‘void levelOrderTraversal(node * r)’ which prints the items of a binary tree rooted at node r in a
+“level order”. That is, the first item printed is the value contained in the root node r, the next items printed are the
+children of the root, the next items printed are the grandchildren of the root, etc. Your algorithm must run in O(n)
+time. Hint: You may use the STL queue in your solution.
+For example, the following tree would be printed in the order: A B C D E F 
+Turn in:
+    a. A written description of your algorithm, along with an explanation for why it works, and an analysis of
+    your run time.
+    b. A C++ implementation of your solution. Use: ‘void levelOrderTraversal(node * r);’ as your function
+    prototype.
+
+
+
+Reasonsing:
+    -We are using a queue to keep track of which is the first node we need to print and be able to add at the end the one we need to print next
+Run time
+    -O(n) run time
