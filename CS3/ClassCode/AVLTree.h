@@ -11,17 +11,65 @@ private:
 		double data;
 		node* left;
 		node* right;
-        int height =0;
+        int height;
 
 		node(double x)
 		{
 			data = x;
 			left = nullptr;
 			right = nullptr;
+			height=0;
 		}
 	};
 
 	node* root;
+
+	void leftRotation(node*&p){
+		node* A=p;
+		node* B= p->right;
+		node* bl = B->left;
+		p=B;
+		A->right=bl;
+		B->left=A;
+		updateHeight(A);
+		updateHeight(B);
+
+	}
+	void rightRotation(node*&p){
+		node* A=p;
+		node* B= p->left;
+		node* br = B->right;
+		p=B;
+		A->left=br;
+		B->right=A;
+		updateHeight(A);
+		updateHeight(B);
+		
+	}
+	void leftRightRotation(node*& p){
+		leftRotation(p->left);
+		rightRotation(p);
+	}
+	void rightLeftRotation(node*& p){
+		rightRotation(p->right);
+		leftRotation(p);
+	}
+
+	void fixBalance(node* &p){
+		if (height(p->left)>height(p->right)+1){
+			if(height(p->left->left)>height(p->left->right)+1){
+				rightRotation(p);
+			}else{
+				leftRightRotation(p);
+			}
+		}else if (height(p->right)>height(p->left)+1){
+			if(height(p->right->right)>height(p->right->left)+1){
+				leftRotation(p);
+			}else{
+				rightLeftRotation(p);
+			}
+		}
+	}
 
 	//insert x into tree rooted at node p.
 	void recInsert(double x, node* &p)
@@ -42,6 +90,8 @@ private:
 				recInsert(x, p->right);
                 fixheight(p);
 			}
+			//The Heigth of p might be out of date
+			updateHeight(p);
 		}
 	}
 
@@ -62,6 +112,16 @@ private:
 		}
 	}
 
+	void updateHeight(node* p){
+		int lheight = height(p->left);
+		int rheight = height(p->right);
+		p->height= 1+ max(lheight,rheight);
+	}
+
+	int height(node*p){
+		if (p==nullptr) return -1;
+		return p->height;
+	}
 	//return number of items/nodes in tree rooted at p.
 	int numItems(node* p)
 	{
