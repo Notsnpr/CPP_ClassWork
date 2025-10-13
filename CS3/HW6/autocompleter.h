@@ -5,6 +5,8 @@
 #include <string>
 using namespace std;
 
+
+
 class Autocompleter
 {
 	// For the mandatory running times below:
@@ -15,31 +17,19 @@ public:
 	// Creates a new Autocompleter with an empty dictionary.
 	//
 	// Must run in O(1) time.
-	Autocompleter()
-    {
-        root = nullptr;
-    }
+	Autocompleter();
 
 	// Adds a string x to the dictionary.
 	// If x is already in the dictionary, does nothing.
 	//
 	// Must run in O(log(n)) time.
-	void insert(string x, int freq)
-    {
-        Entry e;
-        e.s = x;
-        e.freq = freq;
-        insert_recurse(e, root);
-    }
+	void insert(string x, int freq);
 
 	// Returns the number of strings in the dictionary
 	// of possible completions.
 	//
 	// Must run in O(n) time.
-	int size()
-    {
-        return size_recurse(root);
-    }
+	int size();
 
 	// Fills the vector T with the three most-frequent completions of x.
 	// If x has less than three completions, then
@@ -51,18 +41,7 @@ public:
 	// Instead, only search regions of the tree for which a completion could
 	// be present, which will yield a run time bound of O(k log n ) time,
 	// where k is the number of completions in the tree.
-	void completions(string x, vector<string> &T)
-    {
-        vector<Entry> C;
-        completions_recurse(x, root, C);
-        // Sort C by frequency (highest to lowest)
-        sort(C.begin(), C.end(), [](Entry a, Entry b) {
-            return a.freq > b.freq;
-        });
-        T.clear();
-        for (int i = 0; i < min(3, (int)C.size()); ++i)
-            T.push_back(C[i].s);
-    }
+	void completions(string x, vector<string> &T);
 
 	//Reports height of the AVL tree, runs in O(1) time.
 	int height()
