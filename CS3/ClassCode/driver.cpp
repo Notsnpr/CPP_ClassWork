@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
-#include "AVLTree.h"
+#include "minHeap.cpp"
 using namespace std;
 
 int main()
 {
-	binarySearchTree T;
+	minHeap T;
 
 	T.insert(115);
 	T.insert(255);
@@ -20,8 +20,8 @@ int main()
 	T.insert(360);
 
 	//print out items in tree
-	T.display();
-	cout << "Num items: " << T.numItems() << endl;
+	T.testDisplay();
+	//cout << "Num items: " << T.numItems() << endl;
 
 
 	return 0;
