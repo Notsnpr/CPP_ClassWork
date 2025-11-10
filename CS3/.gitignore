@@ -1,0 +1,86 @@
+# ========================================
+# C++ / General Build Artifacts
+# ========================================
+
+# Compiled object files
+*.o
+*.obj
+
+# Compiled dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.bin
+main
+
+# ========================================
+# Build System / IDE
+# ========================================
+
+# CMake / Make
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+build/
+bin/
+lib/
+
+# Visual Studio Code
+.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/c_cpp_properties.json
+
+# ========================================
+# OS Files
+# ========================================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ========================================
+# Logs / Misc
+# ========================================
+
+*.log
+*.tmp
+*.swp
+*.bak
+*.old
+
+# ========================================
+# Environment / Secrets
+# ========================================
+
+.env
+*.env
+*.key
+*.pem
+
+# ========================================
+# Dependency Managers (if used later)
+# ========================================
+
+# vcpkg / conan / ninja
+vcpkg_installed/
+.conan/
+.ninja_deps
+.ninja_log
